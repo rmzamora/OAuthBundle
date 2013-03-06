@@ -1,0 +1,36 @@
+{
+    "name": "rmzamora/oauth-bundle",
+    "type": "symfony-bundle",
+    "description": "RMZamora HWIOAuth Extension Bundle",
+    "keywords": ["Sonata Bundles", "HWIOAuth Extensions"],
+    "homepage": "http://mellzamora.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mell M. Zamora",
+            "email": "me@mellzamora.com",
+            "homepage": "http://mellzamora.com"
+        }
+    ],
+    "require": {
+        "php":  ">=5.3.2",
+        "hwi/oauth-bundle": "0.2.*@dev"
+    },
+    "require-dev": {
+        "doctrine/orm":                 ">=2.1,<2.4-dev",
+        "symfony/validator":            ">=2.0,<2.3-dev",
+        "symfony/twig-bundle":          ">=2.0,<2.3-dev",
+        "friendsofsymfony/user-bundle": ">=1.2,<2.0-dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Rmzamora\\OAuthBundle": ""
+        }
+    },
+    "target-dir": "Rmzamora/OAuthBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.1.x-dev"
+        }
+    }
+}
