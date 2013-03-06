@@ -1,0 +1,23 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="row-fluid">
+    <div class="span6 offset3">
+        <h3>{{ 'header.connecting' | trans({}, 'HWIOAuthBundle')}}</h3>
+        <div class="row">
+            <div class="span12">
+                <p>{{ 'connect.confirm.text' | trans({'%service%': service | trans({}, 'HWIOAuthBundle'), '%name%': userInformation.realName}, 'HWIOAuthBundle') }}</p>
+                <p>
+                    <form action="{{ path('hwi_oauth_connect_service', {'service': service, 'key': key}) }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+                        {{ form_widget(form) }}
+                        <div>
+                            <button type="submit" class="btn btn-primary">{{ 'connect.confirm.submit' | trans({}, 'HWIOAuthBundle') }}</button>
+                            <a href="{{ path('sonata_user_profile_show') }}" class="btn btn-danger">{{ 'rmzamora_sonataext_user_cancel' | trans({}, 'RmzamoraSonataExtUserBundle') }}</a>
+                        </div>
+                    </form>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock fos_user_content %}

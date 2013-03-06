@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="rmzamora_oauth.firstname.blank">
+                <source>rmzamora_oauth.firstname.blank</source>
+                <target>Firstname is required</target>
+            </trans-unit>
+            <trans-unit id="rmzamora_oauth.firstname.short">
+                <source>rmzamora_oauth.firstname.short</source>
+                <target>Firstname should not be less than 2 characters</target>
+            </trans-unit>
+            <trans-unit id="rmzamora_oauth.firstname.long">
+                <source>rmzamora_oauth.firstname.long</source>
+                <target>Firstname cannot exceed 64 characters</target>
+            </trans-unit>
+
+            <trans-unit id="rmzamora_oauth.lastname.blank">
+                <source>rmzamora_oauth.lastname.blank</source>
+                <target>Lastname is required</target>
+            </trans-unit>
+            <trans-unit id="rmzamora_oauth.lastname.short">
+                <source>rmzamora_oauth.lastname.short</source>
+                <target>Lastname should not be less than 2 characters</target>
+            </trans-unit>
+            <trans-unit id="rmzamora_oauth.lastname.long">
+                <source>rmzamora_oauth.lastname.long</source>
+                <target>Lastname cannot exceed 64 characters</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

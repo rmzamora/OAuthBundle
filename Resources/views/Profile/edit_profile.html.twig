@@ -1,0 +1,92 @@
+{#
+
+This file is part of the RmzamoraSonataExtBundles package.
+
+(c) mell m. zamora <me@mellzamora.com>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+<div class="row-fluid">
+    <div class="span6 offset3">
+        <div class="sonata-user-edit-profile">
+
+            <h2>{{ "title_user_account" | trans({}, 'SonataUserBundle')}} - {{ "title_user_edit_profile" | trans({}, 'SonataUserBundle')}}</h2>
+
+            <form action="{{ path('sonata_user_profile_edit') }}" method="POST">
+                {{ form_rest(form) }}
+
+                {% if user.facebookUid %}
+                    <div class="controls">
+                        <p class="small">You've connected your Facebook account to this application.</p>
+                        <p>
+                            <a class="btn" href="#">Disconnect from Facebook</a>
+                        </p>
+                    </div>
+                {% else %}
+                    <div class="controls">
+                        <p class="small">You can connect your Facebook profile to this application. Doing this you can notify your Facebook friends about things you do with this application</p>
+                        <p>
+                            <a class="btn btn-primary" href="{{ path('hwi_oauth_service_redirect', {'service':'facebook'}) }}">Connect with Facebook</a>
+                        </p>
+                    </div>
+                {% endif %}
+
+                {% if user.twitterUid %}
+                    <div class="controls">
+                        <p class="small">You've connected your Twitter account to this application.</p>
+                        <p>
+                            <a class="btn" href="#">Disconnect from Twitter</a>
+                        </p>
+                    </div>
+                {% else %}
+                    <div class="controls">
+                        <p class="small">You can connect your Twitter profile to this application. Doing this you can notify your Twitter friends about things you do with this application</p>
+                        <p>
+                            <a class="btn btn-info" href="{{ path('hwi_oauth_service_redirect', {'service':'twitter'}) }}">Connect with Twitter</a>
+                        </p>
+                    </div>
+                {% endif %}
+
+                {% if user.gplusUid %}
+                    <div class="controls">
+                        <p class="small">You've connected your GPlus account to this application.</p>
+                        <p>
+                            <a class="btn" href="#">Disconnect from GPlus</a>
+                        </p>
+                    </div>
+                {% else %}
+                    <div class="controls">
+                        <p class="small">You can connect your GPlus profile to this application. Doing this you can notify your Gplus friends about things you do with this application</p>
+                        <p>
+                            <a class="btn btn-danger" href="{{ path('hwi_oauth_service_redirect', {'service':'google'}) }}">Connect with Gplus</a>
+                        </p>
+                    </div>
+                {% endif %}
+
+                {% if user.linkedinUid %}
+                    <div class="controls">
+                        <p class="small">You've connected your LinkedIn account to this application.</p>
+                        <p>
+                            <a class="btn" href="#">Disconnect from LinkedIn</a>
+                        </p>
+                    </div>
+                {% else %}
+                    <div class="controls">
+                        <p class="small">You can connect your LinkedIn profile to this application. Doing this you can notify your LinkedIn friends about things you do with this application</p>
+                        <p>
+                            <a class="btn btn-primary" href="{{ path('hwi_oauth_service_redirect', {'service':'linkedin'}) }}">Connect with LinkedIn</a>
+                        </p>
+                    </div>
+                {% endif %}
+
+                <div class="form-actions">
+                    <input class="btn btn-inverse"type="submit" name="submit" value="{{ 'sonata_user_submit'|trans({}, 'SonataUserBundle') }}" />
+                    <a class="btn btn-danger" type="button" href="{{ path('sonata_user_profile_show') }}"/>{{ 'rmzamora_sonataext_user_cancel' | trans({}, 'RmzamoraSonataExtUserBundle') }}</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
