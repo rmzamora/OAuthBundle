@@ -14,7 +14,7 @@
     ],
     "require": {
         "php":  ">=5.3.2",
-        "hwi/oauth-bundle": "0.2.*@dev"
+        "hwi/oauth-bundle": "0.3.*@dev"
     },
     "require-dev": {
         "doctrine/orm":                 ">=2.1,<2.4-dev",
