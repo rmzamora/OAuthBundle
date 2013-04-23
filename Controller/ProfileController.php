@@ -17,6 +17,13 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\UserBundle\Model\UserInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use FOS\UserBundle\Event\FormEvent;
+use FOS\UserBundle\Event\FilterUserResponseEvent;
+use FOS\UserBundle\Event\GetResponseUserEvent;
+use FOS\UserBundle\FOSUserEvents;
+
+
 use Rmzamora\SonataExt\UserBundle\Controller\ProfileController as BaseClass;
 
 /**
@@ -32,7 +39,7 @@ class ProfileController extends BaseClass
      *
      * @throws AccessDeniedException
      */
-    public function editProfileAction()
+    public function editProfileAction(Request $request)
     {
         $user = $this->container->get('security.context')->getToken()->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
