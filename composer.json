@@ -14,7 +14,7 @@
     ],
     "require": {
         "php":  ">=5.3.2",
-        "hwi/oauth-bundle": "0.3.*@dev"
+        "hwi/oauth-bundle": "*"
     },
     "require-dev": {
         "doctrine/orm":                 ">=2.1,<2.4-dev",
@@ -30,7 +30,8 @@
     "target-dir": "Rmzamora/OAuthBundle",
     "extra": {
         "branch-alias": {
-            "dev-master": "2.1.x-dev"
+            "dev-2.1": "2.1.x-dev",
+            "dev-master": "2.2.x-dev"
         }
     }
 }
