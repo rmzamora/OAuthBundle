@@ -1,0 +1,58 @@
+{#
+
+This file is part of the Rmzamora SonataExtensions package.
+
+(c) mell m. zamora <me@mellzamora.com>
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+
+#}
+
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% block fos_user_content %}
+    {% if error %}
+        <div class="row-fluid">
+            <div class="span6 offset3">
+                <div class="alert alert-error">
+                    <!-- 		  <button type="button" class="close" data-dismiss="alert">×</button> -->
+                    {{ error|trans({}, 'FOSUserBundle') }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="row-fluid">
+        <div class="span6 offset3">
+            <form action="{{ path("fos_user_security_check") }}" method="post">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+                <input class="span12" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+
+                <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+                <input class="span12" type="password" id="password" name="_password" required="required" />
+
+
+                <label class="checkbox" for="remember_me">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }} | <a href="{{ path('fos_user_resetting_request') }}">Forgot Password?</a>
+                </label>
+
+                <div class="form-actions">
+                    <input class="btn btn-inverse" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                    <div class="btn-group">
+                        <a class="btn btn-primary" href="javascript:void(0);"><i class="icon-user icon-white"></i> Social Network</a>
+                        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{hwi_oauth_login_url('facebook')}}">Facebook</a></li>
+                            <li><a href="{{hwi_oauth_login_url('twitter')}}">Twitter</a></li>
+                            <li><a href="{{hwi_oauth_login_url('google')}}">GPlus</a></li>
+                            <li><a href="{{hwi_oauth_login_url('linkedin')}}">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+{% endblock fos_user_content %}

@@ -1,0 +1,11 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="row-fluid">
+    <div class="span6 offset3">
+        <div class="alert alert-success alert-block">
+        {{ 'header.success' | trans({'%name%': userInformation.realName}, 'HWIOAuthBundle') }}
+        </div>
+    </div>
+</div>
+{% endblock fos_user_content %}
